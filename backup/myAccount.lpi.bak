@@ -28,15 +28,24 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="2">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="TAChartLazarusPkg"/>
+        <PackageName Value="FCL"/>
       </Item1>
       <Item2>
-        <PackageName Value="LCL"/>
+        <PackageName Value="sqlite3laz"/>
       </Item2>
+      <Item3>
+        <PackageName Value="SQLDBLaz"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
-    <Units Count="2">
+    <Units Count="5">
       <Unit0>
         <Filename Value="myAccount.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -45,8 +54,32 @@
         <Filename Value="unt_main.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frm_main"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="unt_database.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm_database"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="unt_addmoney.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_addMoney"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unt_addMoney"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="unt_addspend.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frm_addSpend"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unt_addSpend"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

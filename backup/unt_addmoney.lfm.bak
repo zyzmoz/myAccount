@@ -1,0 +1,10 @@
+object frm_addMoney: Tfrm_addMoney
+  Left = 485
+  Height = 286
+  Top = 190
+  Width = 424
+  BorderStyle = bsDialog
+  Caption = 'Add Money'
+  Position = poMainFormCenter
+  LCLVersion = '1.4.2.0'
+end

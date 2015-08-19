@@ -1,0 +1,25 @@
+object dm_database: Tdm_database
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 483
+  HorizontalOffset = 230
+  VerticalOffset = 145
+  Width = 654
+  object sqliteConnection: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    AfterConnect = sqliteConnectionAfterConnect
+    KeepConnection = False
+    Transaction = sqlTransaction
+    LogEvents = []
+    Options = []
+    left = 56
+    top = 40
+  end
+  object sqlTransaction: TSQLTransaction
+    Active = False
+    Database = sqliteConnection
+    left = 160
+    top = 40
+  end
+end

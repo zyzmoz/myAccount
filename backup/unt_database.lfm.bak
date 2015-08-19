@@ -1,0 +1,46 @@
+object dm_database: Tdm_database
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 483
+  HorizontalOffset = 230
+  VerticalOffset = 145
+  Width = 654
+  object sqliteConnection: TSQLite3Connection
+    Connected = True
+    LoginPrompt = False
+    AfterConnect = sqliteConnectionAfterConnect
+    DatabaseName = '\myAccount.sqlite'
+    KeepConnection = False
+    Transaction = sqlTransaction
+    LogEvents = []
+    Options = []
+    left = 56
+    top = 40
+  end
+  object sqlTransaction: TSQLTransaction
+    Active = True
+    Database = sqliteConnection
+    left = 144
+    top = 40
+  end
+  object sqlAccMov: TSQLQuery
+    FieldDefs = <>
+    Database = sqliteConnection
+    Transaction = sqlTransaction
+    SQL.Strings = (
+      'select * from accountdetail;'
+    )
+    Params = <>
+    left = 56
+    top = 112
+  end
+  object DataSource1: TDataSource
+    DataSet = sqlAccMov
+    left = 144
+    top = 112
+  end
+  object Sqlite3Dataset1: TSqlite3Dataset
+    left = 124
+    top = 308
+  end
+end

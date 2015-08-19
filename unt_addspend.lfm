@@ -1,0 +1,10 @@
+object frm_addSpend: Tfrm_addSpend
+  Left = 468
+  Height = 286
+  Top = 206
+  Width = 424
+  BorderStyle = bsDialog
+  Caption = 'Add Spend'
+  Position = poMainFormCenter
+  LCLVersion = '1.4.2.0'
+end
