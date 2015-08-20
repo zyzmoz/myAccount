@@ -8,6 +8,7 @@ object frm_main: Tfrm_main
   Caption = 'myAccount'
   ClientHeight = 667
   ClientWidth = 1059
+  OnShow = FormShow
   LCLVersion = '1.4.2.0'
   object Chart1: TChart
     Left = 184
@@ -30,6 +31,10 @@ object frm_main: Tfrm_main
     Title.Text.Strings = (
       'TAChart'
     )
+    object Chart1BarSeries1: TBarSeries
+      BarBrush.Color = clRed
+      Source = DbChartSource1
+    end
   end
   object Actions: TGroupBox
     Left = 0
@@ -325,7 +330,12 @@ object frm_main: Tfrm_main
     end
   end
   object DbChartSource1: TDbChartSource
-    left = 984
-    top = 440
+    DataSource = dm_database.DataSource1
+    left = 968
+    top = 512
+  end
+  object ChartToolset1: TChartToolset
+    left = 848
+    top = 504
   end
 end

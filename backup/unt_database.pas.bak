@@ -13,7 +13,14 @@ type
 
   Tdm_database = class(TDataModule)
     DataSource1: TDataSource;
-    Sqlite3Dataset1: TSqlite3Dataset;
+    sqlAccMovaccountId: TLongintField;
+    sqlAccMovcomment: TStringField;
+    sqlAccMovdescription: TStringField;
+    sqlAccMoventryDate: TDateField;
+    sqlAccMovid: TLongintField;
+    sqlAccMovkind: TStringField;
+    sqlAccMovoccurrenceDate: TDateField;
+    sqlAccMovvalue: TFloatField;
     sqliteConnection: TSQLite3Connection;
     sqlAccMov: TSQLQuery;
     sqlTransaction: TSQLTransaction;

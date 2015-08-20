@@ -8,6 +8,7 @@ object frm_main: Tfrm_main
   Caption = 'myAccount'
   ClientHeight = 667
   ClientWidth = 1059
+  OnShow = FormShow
   LCLVersion = '1.4.2.0'
   object Chart1: TChart
     Left = 184
@@ -326,8 +327,11 @@ object frm_main: Tfrm_main
   end
   object DbChartSource1: TDbChartSource
     DataSource = dm_database.DataSource1
-    OnGetItem = DbChartSource1GetItem
-    left = 984
-    top = 440
+    left = 968
+    top = 512
+  end
+  object ChartToolset1: TChartToolset
+    left = 872
+    top = 520
   end
 end
