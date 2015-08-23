@@ -24,7 +24,6 @@ object dm_database: Tdm_database
     top = 40
   end
   object sqlAccMov: TSQLQuery
-    IndexName = 'DEFAULT_ORDER'
     FieldDefs = <    
       item
         Name = 'id'
@@ -148,6 +147,7 @@ object dm_database: Tdm_database
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = False
+      DisplayFormat = '#,##0.00'
       MaxValue = 0
       MinValue = 0
       Precision = -1

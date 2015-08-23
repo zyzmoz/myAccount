@@ -7,8 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, unt_main, tachartlazaruspkg, sqlite3laz, unt_database, unt_addMoney,
-  unt_addSpend
+  Forms, unt_main, tachartlazaruspkg, sqlite3laz, datetimectrls, unt_database,
+  unt_addMoney, unt_addSpend
   { you can add units after this };
 
 {$R *.res}

@@ -1,7 +1,7 @@
 object frm_main: Tfrm_main
-  Left = 230
+  Left = 300
   Height = 667
-  Top = 145
+  Top = 27
   Width = 1059
   AlphaBlendValue = 150
   BorderStyle = bsDialog
@@ -9,29 +9,8 @@ object frm_main: Tfrm_main
   ClientHeight = 667
   ClientWidth = 1059
   OnShow = FormShow
+  Position = poScreenCenter
   LCLVersion = '1.4.2.0'
-  object Chart1: TChart
-    Left = 184
-    Height = 656
-    Top = 8
-    Width = 872
-    AxisList = <    
-      item
-        Minors = <>
-        Title.LabelFont.Orientation = 900
-      end    
-      item
-        Alignment = calBottom
-        Minors = <>
-      end>
-    Foot.Brush.Color = clBtnFace
-    Foot.Font.Color = clBlue
-    Title.Brush.Color = clBtnFace
-    Title.Font.Color = clBlue
-    Title.Text.Strings = (
-      'TAChart'
-    )
-  end
   object Actions: TGroupBox
     Left = 0
     Height = 667
@@ -41,7 +20,7 @@ object frm_main: Tfrm_main
     Caption = 'Actions'
     ClientHeight = 647
     ClientWidth = 174
-    TabOrder = 1
+    TabOrder = 0
     object btn_addMoney: TBitBtn
       Left = 4
       Height = 54
@@ -323,6 +302,156 @@ object frm_main: Tfrm_main
       }
       OnClick = BitBtn2Click
       TabOrder = 1
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 178
+    Height = 579
+    Top = 88
+    Width = 880
+    ActivePage = TabSheet1
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Movement'
+      ClientHeight = 551
+      ClientWidth = 872
+      object DBGrid1: TDBGrid
+        Left = 8
+        Height = 504
+        Top = 8
+        Width = 856
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'id'
+            FieldName = 'id'
+          end        
+          item
+            Title.Caption = 'occurrenceDate'
+            FieldName = 'occurrenceDate'
+          end        
+          item
+            Title.Caption = 'entryDate'
+            FieldName = 'entryDate'
+          end        
+          item
+            Title.Caption = 'value'
+            FieldName = 'value'
+          end        
+          item
+            Title.Caption = 'description'
+            FieldName = 'description'
+          end>
+        DataSource = dm_database.DataSource1
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 0
+        OnDrawColumnCell = DBGrid1DrawColumnCell
+        OnPrepareCanvas = DBGrid1PrepareCanvas
+      end
+    end
+  end
+  object pnMenus: TPanel
+    Left = 178
+    Height = 88
+    Top = 0
+    Width = 880
+    ClientHeight = 88
+    ClientWidth = 880
+    TabOrder = 2
+    object rg_kind: TRadioGroup
+      Left = 472
+      Height = 81
+      Top = 0
+      Width = 128
+      AutoFill = True
+      Caption = 'Transaction Kind'
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 1
+      ClientHeight = 61
+      ClientWidth = 124
+      ItemIndex = 0
+      Items.Strings = (
+        'All'
+        'Debit'
+        'Credit'
+      )
+      TabOrder = 0
+    end
+    object rg_dataFilter: TGroupBox
+      Left = 608
+      Height = 81
+      Top = 0
+      Width = 145
+      Caption = 'Date'
+      ClientHeight = 61
+      ClientWidth = 141
+      TabOrder = 1
+      object DateTimePicker1: TDateTimePicker
+        Left = 48
+        Height = 23
+        Top = 0
+        Width = 83
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 42239
+        Time = 0.786370972222358
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object DateTimePicker2: TDateTimePicker
+        Left = 48
+        Height = 23
+        Top = 28
+        Width = 83
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 1
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 42239
+        Time = 0.786370972222358
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label1: TLabel
+        Left = 5
+        Height = 15
+        Top = 6
+        Width = 24
+        Caption = 'Start'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 5
+        Height = 15
+        Top = 34
+        Width = 20
+        Caption = 'End'
+        ParentColor = False
+      end
     end
   end
   object DbChartSource1: TDbChartSource
